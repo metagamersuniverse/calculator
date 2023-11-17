@@ -5,7 +5,7 @@ body {
     background-color: #060818;
     color: white;
     font-size: 16px; /* Base font size for the body */
-    background-image: url(https://img.freepik.com/free-photo/abstract-digital-grid-black-background_53876-97647.jpg);
+    background-color: #2d4f6e;
 }
 
 header {
@@ -13,6 +13,9 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    border-left: 1px solid #ccc;
+    box-shadow: inset 0 50px 25px -15px #216ca6;
+    background-color: #174b73;
 }
 
 .container {
@@ -29,9 +32,11 @@ header {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    background-color: #0f1726;
+    /* background-color: #195a8d; */
     margin-bottom: 20px;
     font-size: 18px; /* Adjusting the font size for columns */
+    box-shadow: inset 20px 20px 25px -15px #297cbb;
+    background-color: #174b73;
 }
 
 /* Styling for the calculator */
@@ -39,7 +44,7 @@ header {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    background-color: #0f1726;
+    background-color: #0c314d;
     font-size: 18px;
     display: flex;
     flex-direction: column;
@@ -49,13 +54,16 @@ header {
     gap: 10px;
     width: 80%; /* Set the width to occupy 80% of the screen */
     margin: auto; /* Center horizontally */
+    background-image: url(https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg?w=1480&t=st=1700185773~exp=1700186373~hmac=d806e868b4776923d7265a4afe236e5058770ed59e7433c7c6b186c4f13fbb9e);
 }
 
 /* Adjusting margin for input elements */
 .calculator input[type="number"],
 .calculator select {
-    margin: 15px 5px; /* Set margin as needed */
-    background: aqua;
+    margin: 4px 5px; /* Set margin as needed */
+    box-shadow: 0em 0.3125em 0.625em rgba(0,0,0,0.3);
+    background-color: #fff;
+    padding: 6px 10px !important;
 }
 
 
@@ -82,18 +90,29 @@ header {
     font-size: 18px;
     padding: 20px;
     gap: 10px; /* Spacing between items */
-    background-color: midnightblue;
+    background-color: #1a5684;
 }
 
 /* Individual items inside the result pop-up */
 .result p {
-    margin: 0;
+    margin: 2px 2px;
     padding: 5px;
-    border-radius: 5px;
-    background-color: #00000061;
+    font-size: .875em;
+    border-radius: 8px;
+    box-shadow: inset 0 50px 25px -15px #216ca6;
+    background-color: #174b73;
+    height: 29px;
+    line-height: 11px;
+    color: #fff;
+    transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    border-width: 2px 0px 2px 0px;
+    border: white;
+    background: bottom;
+}
+
+p {
     color: white;
-    transition: transform 0.3s ease-in-out;
-    background-color: lightseagreen;
+    align-content: center;
 }
 
 
@@ -105,10 +124,14 @@ header {
     cursor: pointer;
     font-size: 20px;
     color: white;
-    border: 2px solid red; /* Set a red border */
+     /* Set a red border */
     padding: 5px; /* Add some padding for better appearance */
     border-radius: 30%; /* Make it a circle by adjusting border-radius */
-    background-color: #b61a1a;
+    box-shadow: inset 0 50px 25px -25px #84b332;
+    background-color: #668a28;
+    display: flex;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .close-btn:hover {
@@ -134,13 +157,17 @@ header {
 button {
     display: block;
     padding: 15px 40px; /* Adjusting padding to create a standard button size */
-    background-color: #4CAF50;
-    color: white;
+    background-color: #6b9420;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    font-size: 20px;
+    border-left: 1px solid #ccc;
+    vertical-align: bottom;
+    text-align: left;
+    font-size: 15px;
+    line-height: 11px;
+    color: #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effects */
