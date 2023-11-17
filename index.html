@@ -32,11 +32,16 @@
                         <option value="nagad">Nagad</option>
                         <option value="rocket">Rocket</option>
                         <option value="upay">Upay</option>
-                        <option value="bank">Bank (0% fee)</option>
-                    </select><br><br>
+                        <option value="custom">Custom Fee</option>
+    </select>
 
-                    <label for="paymentMethodFee">Payment Fee (%):</label>
-                    <input type="number" id="paymentMethodFee" name="paymentMethodFee" disabled><br><br>
+    <!-- Input field for custom fee -->
+    <label for="customFee">Payment Fee (%):</label>
+    <input type="number" id="customFee" placeholder="Enter custom fee percentage" onchange="setFee()">
+
+    <!-- Input field to display the calculated fee -->
+    <label for="paymentMethodFee">Calculated Fee:</label>
+    <input type="text" id="paymentMethodFee" readonly>
                 </form>
 
                 <h2>1xBet Calculator</h2>
