@@ -65,7 +65,7 @@ function calculate() {
         <p>Total BDT needed: ${totalBdtNeeded.toFixed(2)} BDT</p>
         <p>USDT received: ${usdtReceived.toFixed(8)} USDT</p>
         <p>USDT Buyrate after fee: ${usdtRateAfterFee.toFixed(2)} BDT</p>
-        <h2>Comparison</h2>
+        <h2>Earnings</h2>
         <p>${comparisonText}: <span class="${comparisonText === 'Profit' ? 'green' : 'red'}">${comparisonResult} BDT</span></p>
     
         <h2>1xBet Calculator Result</h2>
