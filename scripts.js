@@ -120,7 +120,7 @@ function calculateAndDownload() {
 // Add this event listener to execute code when the window has finished loading
     window.addEventListener('load', function () {
         // Set default payment method and fee during page load
-        document.getElementById('paymentMethod').value = 'nagad';
+        document.getElementById('paymentMethod').value = 'bkash';
         setFee();
 
         // You may also want to call calculate() here if needed
