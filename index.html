@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Combined Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header>
+        <h1>Combined Calculator</h1>
+    </header>
+    <div class="container">
+        <div class="column">
+            <div class="calculator">
+                <h2>Buy Calculator</h2>
+                <form id="calculateForm">
+                    <label for="bdtAmount">BDT Amount:</label>
+                    <input type="number" id="bdtAmount" name="bdtAmount" required><br><br>
+
+                    <label for="usdtPrice">USDT Price:</label>
+                    <input type="number" id="usdtPrice" name="usdtPrice" required><br><br>
+
+                    <label for="paymentMethod">Payment Method:</label>
+                    <select id="paymentMethod" name="paymentMethod" onchange="setFee()">
+                        <option value="bkash">bKash</option>
+                        <option value="nagad">Nagad</option>
+                        <option value="rocket">Rocket</option>
+                        <option value="upay">Upay</option>
+                        <option value="bank">Bank (0% fee)</option>
+                    </select><br><br>
+
+                    <label for="paymentMethodFee">Payment Fee (%):</label>
+                    <input type="number" id="paymentMethodFee" name="paymentMethodFee" disabled><br><br>
+                </form>
+
+                <h2>1xBet Calculator</h2>
+                <form id="calculateForm1xBet">
+                    <label for="bdtAmount1xBet">BDT Amount in 1xBet:</label>
+                    <input type="number" id="bdtAmount1xBet" name="bdtAmount1xBet" required><br><br>
+
+                    <label for="usdtDeposited">USDT Deposited:</label>
+                    <input type="number" id="usdtDeposited" name="usdtDeposited" required><br><br>
+                </form>
+                <button onclick="calculateAndToggle()">Calculate & Show Result</button>
+
+            </div>
+        </div>
+
+        <!-- Result pop-up -->
+        <div class="result" id="resultBuyy">
+            <!-- Close button -->
+
+
+            <!-- Result content -->
+            <!-- Add more result content here -->
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

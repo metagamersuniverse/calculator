@@ -1,0 +1,162 @@
+/* Styles for layout */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #060818;
+    color: white;
+    font-size: 16px; /* Base font size for the body */
+}
+
+header {
+    background-color: #1c305280;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.column {
+    padding: 2%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #0f1726;
+    margin-bottom: 20px;
+    font-size: 18px; /* Adjusting the font size for columns */
+}
+
+/* Styling for the calculator */
+.calculator {
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #0f1726;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+    width: 80%; /* Set the width to occupy 80% of the screen */
+    margin: auto; /* Center horizontally */
+}
+
+/* Adjusting margin for input elements */
+.calculator input[type="number"],
+.calculator select {
+    margin: 15px 5px; /* Set margin as needed */
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+    .calculator {
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+}
+
+
+
+/* ... (your existing CSS styles) ... */
+
+/* Styling for the result pop-up */
+.result {
+    display: none; /* Initially hide the result pop-up */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #0f1726;
+    font-size: 18px;
+    padding: 20px;
+    gap: 10px; /* Spacing between items */
+}
+
+/* Individual items inside the result pop-up */
+.result p {
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #1c305280;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Styles for the close button */
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    border: 2px solid red; /* Set a red border */
+    padding: 5px; /* Add some padding for better appearance */
+    border-radius: 50%; /* Make it a circle by adjusting border-radius */
+    background-color: transparent; /* Make the background transparent */
+}
+
+.close-btn:hover {
+    color: #ccc; /* Change color on hover */
+    border-color: #ccc; /* Change border color on hover */
+}
+
+
+/* Media query for mobile devices */
+@media screen and (max-width: 767px) {
+    .result {
+        width: 90%; /* Adjust width for mobile */
+        display: block; /* Show the result section */
+        margin: auto; /* Center horizontally */
+        top: unset; /* Remove top positioning */
+        left: unset; /* Remove left positioning */
+        transform: unset; /* Remove transform */
+    }
+}
+
+
+
+button {
+    display: block;
+    padding: 15px 40px; /* Adjusting padding to create a standard button size */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    font-size: 20px;
+}
+
+/* Hover effects */
+.column:hover,
+/* Media query for mobile devices */
+@media screen and (max-width: 767px) {
+    .container {
+        flex-direction: column; /* Change to a column layout for mobile */
+    }
+
+    .column1,
+    .column2 {
+        width: 100%;
+    }
+
+    .result {
+        display: block; /* Show the result section */
+        margin-top: -20px; /* Adjust margin for better spacing */
+    }
+    
+}
