@@ -2,24 +2,36 @@ function setFee() {
     const paymentMethod = document.getElementById('paymentMethod').value;
     let paymentMethodFee = 1.85;
 
-    switch (paymentMethod) {
-        case 'bkash':
-            paymentMethodFee = 1.85;
-            break;
-        case 'nagad':
-            paymentMethodFee = 1.49;
-            break;
-        case 'rocket':
-            paymentMethodFee = 1.67;
-            break;
-        case 'upay':
-            paymentMethodFee = 1.4;
-            break;
-        case 'bank':
+    if (paymentMethod === 'custom') {
+        const customFee = parseFloat(document.getElementById('customFee').value);
+
+        if (!isNaN(customFee) && customFee >= 0) {
+            paymentMethodFee = customFee;
+        } else {
             paymentMethodFee = 0;
-            break;
-        default:
-            paymentMethodFee = 0;
+            alert('Invalid custom fee. Using default fee.');
+        }
+    } else {
+        // Set fees based on predefined methods
+        switch (paymentMethod) {
+            case 'bkash':
+                paymentMethodFee = 1.85;
+                break;
+            case 'nagad':
+                paymentMethodFee = 1.49;
+                break;
+            case 'rocket':
+                paymentMethodFee = 1.67;
+                break;
+            case 'upay':
+                paymentMethodFee = 1.4;
+                break;
+            case 'bank':
+                paymentMethodFee = 0;
+                break;
+            default:
+                paymentMethodFee = 0;
+        }
     }
 
     document.getElementById('paymentMethodFee').value = paymentMethodFee;
