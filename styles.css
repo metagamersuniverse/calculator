@@ -121,7 +121,7 @@ header {
         width: 90%; /* Adjust width for mobile */
         display: block; /* Show the result section */
         margin: auto; /* Center horizontally */
-        top: unset; /* Remove top positioning */
+        top: 20px; /* Remove top positioning */
         left: unset; /* Remove left positioning */
         transform: unset; /* Remove transform */
     }
