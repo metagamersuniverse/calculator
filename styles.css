@@ -67,8 +67,6 @@ header {
 
 
 
-/* ... (your existing CSS styles) ... */
-
 /* Styling for the result pop-up */
 .result {
     display: none; /* Initially hide the result pop-up */
@@ -83,6 +81,7 @@ header {
     font-size: 18px;
     padding: 20px;
     gap: 10px; /* Spacing between items */
+    background-color: midnightblue;
 }
 
 /* Individual items inside the result pop-up */
