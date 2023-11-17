@@ -56,18 +56,19 @@ function calculate() {
 
     const comparison = (usdtRateAfterFee - bdtPerUsdt1xBet) * usdtNeeded.toFixed(2);
 
-    let comparisonText = '';
-    let comparisonResult = Math.abs(comparison).toFixed(2);
+    let comparisonTextColorClass = '';
 
-    if (usdtRateAfterFee < bdtPerUsdt1xBet) {
-        comparisonText = 'Profit';
-        comparisonResult = '+' + comparisonResult;
-    } else if (usdtRateAfterFee > bdtPerUsdt1xBet) {
-        comparisonText = 'Loss';
-        comparisonResult = '-' + comparisonResult;
-    } else {
-        comparisonText = 'No profit or loss';
-    }
+if (usdtRateAfterFee < bdtPerUsdt1xBet) {
+    comparisonText = 'Profit';
+    comparisonResult = '+' + comparisonResult;
+    comparisonTextColorClass = 'green';  // Apply green color for profit
+} else if (usdtRateAfterFee > bdtPerUsdt1xBet) {
+    comparisonText = 'Loss';
+    comparisonResult = '-' + comparisonResult;
+    comparisonTextColorClass = 'red';  // Apply red color for loss
+} else {
+    comparisonText = 'No profit or loss';
+}
     
 
     const resultBuyy = `
@@ -78,7 +79,7 @@ function calculate() {
         <p>USDT received: ${usdtReceived.toFixed(8)} USDT</p>
         <p>USDT Buyrate after fee: ${usdtRateAfterFee.toFixed(2)} BDT</p>
         <h2>Earnings</h2>
-        <p>${comparisonText}: <span class="${comparisonText === 'Profit' ? 'green' : 'red'}">${comparisonResult} BDT</span></p>
+        <p>${comparisonText}: <span class="${comparisonTextColorClass}">${comparisonResult} BDT</span></p>
     
         <h2>1xBet Calculator Result</h2>
         <p>Total USDT Needed to Pay: ${usdtNeeded.toFixed(8)} USDT</p>
