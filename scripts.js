@@ -65,13 +65,14 @@ function calculate() {
         <p>Total BDT needed: ${totalBdtNeeded.toFixed(2)} BDT</p>
         <p>USDT received: ${usdtReceived.toFixed(8)} USDT</p>
         <p>USDT Buyrate after fee: ${usdtRateAfterFee.toFixed(2)} BDT</p>
+        <h2>Comparison</h2>
+        <p>${comparisonText}: <span class="${comparisonText === 'Profit' ? 'green' : 'red'}">${comparisonResult} BDT</span></p>
+    
         <h2>1xBet Calculator Result</h2>
         <p>Total USDT Needed to Pay: ${usdtNeeded.toFixed(8)} USDT</p>
         <p>Cash Desk (BDT): ${cashDesk1xBet} BDT</p>
         <p>BDT per USDT offered by 1xBet: ${bdtPerUsdt1xBet} BDT</p>
-        <h2>Comparison</h2>
-        <p>${comparisonText}: <span class="${comparisonText === 'Profit' ? 'green' : 'red'}">${comparisonResult} BDT</span></p>
-    `;
+        `;
 
     document.getElementById('resultBuyy').innerHTML = resultBuyy;
 }
