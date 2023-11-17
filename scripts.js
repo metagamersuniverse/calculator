@@ -95,3 +95,24 @@ function calculateAndToggle() {
     // Call the toggleResult function
     toggleResult();
 }
+
+function calculateAndDownload() {
+    // Call the calculate function
+    calculate();
+
+    // Get the HTML content of the result
+    const resultBuyy = document.getElementById('resultBuyy').innerHTML;
+
+    // Create a new jsPDF instance
+    const pdf = new jsPDF(); // Correctly initialize jsPDF
+    console.log("Before generating PDF");
+
+    // Set up the PDF document
+    pdf.html(resultBuyy, {
+        callback: function () {
+            // Save the PDF with a filename "result.pdf"
+            pdf.save('result.pdf');
+            console.log("PDF generated");
+        }
+    });
+}
