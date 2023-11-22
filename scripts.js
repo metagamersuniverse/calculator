@@ -129,6 +129,57 @@ function calculateAndDownload() {
         }
     });
 }
+
+// scripts.js
+
+function handleButtonClick(buttonName, link, directLink) {
+    if (directLink) {
+        // If directLink is true, navigate directly
+        window.location.href = link;
+    } else {
+        // Otherwise, ask for a password
+        var password = prompt("Enter the password:");
+
+        // Hash the entered password (use your own hashing logic)
+        var hashedPassword = hashPassword(password);
+
+        // Check if the hashed password is correct
+        if (hashedPassword === correctHashedPassword) {
+            alert(buttonName + " clicked. Password correct!");
+        } else {
+            alert("Incorrect password. Access denied.");
+        }
+    }
+}
+
+// Example hashing function (replace with your actual hashing logic)
+function hashPassword(password) {
+    return password; // This is just a placeholder, replace with actual hashing
+}
+
+// Replace this with your actual hashed password
+var correctHashedPassword = "4e4a4a2b77c0f6342b582ecb4dd42942d9fc271b9c697fdc9b319f92c02a78ee";
+// Replace this with the actual hashed password you want to check
+function copyText() {
+        // Get the text content
+        var textToCopy = document.getElementById("copyText").innerText;
+
+        // Create a temporary textarea to perform the copy
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = textToCopy;
+        document.body.appendChild(tempTextArea);
+
+        // Select and copy the text
+        tempTextArea.select();
+        document.execCommand("copy");
+
+        // Remove the temporary textarea
+        document.body.removeChild(tempTextArea);
+
+        // Optionally, you can provide some visual feedback to the user
+        alert("Text copied to clipboard: " + textToCopy);
+    }
+
 // Add this event listener to execute code when the window has finished loading
     window.addEventListener('load', function () {
         // Set default payment method and fee during page load
