@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 0;
+            margin: 20px 0;
+        }
+
+        /* Styles for the container holding the buttons */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    padding: 20px; /* Adjust as needed for spacing */
+    flex-wrap: wrap;
+}
+
+/* Styles for the buttons */
+.button-container button {
+    flex-grow: 1; /* Allow buttons to grow and take equal space */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px; /* Adjust as needed for spacing between buttons */
+    margin-bottom: 10px; /* Add margin at the bottom for spacing on smaller screens */
+    width: calc(33.33% - 10px); /* Adjust as needed for spacing between buttons */
+
+    /* Center buttons on mobile */
+    @media screen and (max-width: 767px) {
+        width: 100%;
+    }
+}
+
+.button-container button:hover {
+    background-color: #45a049;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+    .button-container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+.copy-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.copy-box h2 {
+    margin-top: 0;
+}
+        
+
+        .login-container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .welcome-container {
+            width: 100%; /* Set width to 100% to take up the full width */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="login-container" id="loginContainer">
+        <h2>Login</h2>
+        <form action="#" method="post" id="loginForm">
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" onclick="validateLogin()">Login</button>
+        </form>
+    </div>
+
+    <div class="welcome-container" id="welcomeContainer">
+        <h1>All Player ID Database By Roger</h1>
+
+        <div class="promo-buttons">
+            <div class="copy-box" onclick="copyText(1)">
+                <h2>SUB Register</h2>
+                <button onclick="handleButtonClick('Sub Register', 'https://refpakrtsb.top/L?tag=d_2873287m_18645c_&site=2873287&ad=18645')">Melbet Register</button>
+            </div>
+            <div class="copy-box" onclick="copyText(2)">
+                <h2>Melbet Promo</h2>
+                <p>Trustvip</p>
+            </div>
+            <div class="copy-box" onclick="copyText(3)">
+                <h2>Melbet Promo 2</h2>
+                <p>Joinwithtrust</p>
+            </div>
+        </div>
+        <div class="promo-buttons">
+            <div class="button-container">
+                <button onclick="handleButtonClick('Melbet Register', 'https://refpakrtsb.top/L?tag=d_2873287m_45415c_&site=2873287&ad=45415')">Melbet Register</button>
+            </div>
+        </div>
+        <div class="column">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQap0t7be6m2j7mtyVviHgXZ1id_jB9cT10Fsx2S5N137kGCwqkmx910ZZbGCn26xqB8J-mitVGUPCw/pubhtml?gid=502753543&amp;single=true&amp;widget=true&amp;headers=false"></iframe>    
+        </div>
+        <p>This is the protected page that users can view after successful login.</p>
+        <p><a href="#" onclick="logout()">Logout</a></p>
+    </div>
+
+    <script>
+        function hashPassword(password) {
+            // Use CryptoJS to hash the password using SHA-256
+            var hashedPassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
+            return hashedPassword;
+        }
+
+        function validateLogin() {
+            var enteredPassword = document.getElementById('password').value;
+            var hashedEnteredPassword = hashPassword(enteredPassword);
+
+            // Send the hashed password to the server for validation
+            // Server-side logic should compare the hashed password with the stored hash
+            // This is just a client-side example, and it's not secure for a real-world scenario
+            // Server-side validation is crucial for security
+
+            if (hashedEnteredPassword === 'b56de976d3668debcf313d6011e48b57c59e27ccaca5e8102b1a627dc8c9db5c') {
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('welcomeContainer').style.display = 'block';
+            } else {
+                alert('Invalid password. Please try again.');
+            }
+        }
+
+        function logout() {
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('welcomeContainer').style.display = 'none';
+        }
+    </script>
+    
+    <!-- Add this script section to your existing script -->
+<script>
+    function handleButtonClick(buttonName, url) {
+        if (buttonName === 'Melbet Register') {
+            // Open a new window for Melbet Register
+            window.open(url, 'https://refpakrtsb.top/L?tag=d_2873287m_45415c_&site=2873287&ad=45415');
+        } else if (buttonName === 'Button 3') {
+            // Handle the action for Button 3
+            // Add your custom logic or open a different URL as needed
+            alert('Button 3 clicked');
+        }
+        // Add more conditions as needed for other buttons
+    }
+</script>
+
+    <!-- Add this script section to your existing script -->
+<script>
+    function copyText(promoNumber) {
+        var promoText = '';
+
+        switch (promoNumber) {
+            case 1:
+                promoText = '1x_1346267';
+                break;
+            case 2:
+                promoText = 'Trustvip';
+                break;
+            case 3:
+                promoText = 'Joinwithtrust';
+                break;
+            default:
+                break;
+        }
+
+        var tempInput = document.createElement('input');
+        document.body.appendChild(tempInput);
+        tempInput.value = promoText;
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        alert('Text copied: ' + promoText);
+    }
+</script>
+<script src="crypto-js.js"></script>
+
+
+</body>
+</html>
