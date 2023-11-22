@@ -8,6 +8,63 @@ body {
     font-size: 16px; /* Base font size for the body */
     background-color: #2d4f6e;
 }
+/* Styles for the container holding the buttons */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    padding: 20px; /* Adjust as needed for spacing */
+    flex-wrap: wrap;
+}
+
+/* Styles for the buttons */
+.button-container button {
+    flex-grow: 1; /* Allow buttons to grow and take equal space */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px; /* Adjust as needed for spacing between buttons */
+    margin-bottom: 10px; /* Add margin at the bottom for spacing on smaller screens */
+    width: calc(33.33% - 10px); /* Adjust as needed for spacing between buttons */
+
+    /* Center buttons on mobile */
+    @media screen and (max-width: 767px) {
+        width: 100%;
+    }
+}
+
+.button-container button:hover {
+    background-color: #45a049;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+    .button-container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+.copy-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.copy-box h2 {
+    margin-top: 0;
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+    border: 0;
+    margin: 20px 0;
+}
 
 header {
     background-color: #1c305280;
@@ -33,9 +90,8 @@ header {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    /* background-color: #195a8d; */
     margin-bottom: 20px;
-    font-size: 18px; /* Adjusting the font size for columns */
+    font-size: 18px;
     box-shadow: inset 20px 20px 25px -15px #297cbb;
     background-color: #174b73;
 }
@@ -49,37 +105,33 @@ header {
     font-size: 18px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
+    align-items: flex-start;
     justify-content: center;
     padding: 20px;
     gap: 10px;
-    width: 80%; /* Set the width to occupy 80% of the screen */
-    margin: auto; /* Center horizontally */
+    width: 80%;
+    margin: auto;
     background-image: url(https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg?w=1480&t=st=1700185773~exp=1700186373~hmac=d806e868b4776923d7265a4afe236e5058770ed59e7433c7c6b186c4f13fbb9e);
 }
 
-/* Adjusting margin for input elements */
 .calculator input[type="number"],
 .calculator select {
-    margin: 4px 5px; /* Set margin as needed */
+    margin: 4px 5px;
     box-shadow: 0em 0.3125em 0.625em rgba(0,0,0,0.3);
     background-color: #fff;
     padding: 6px 10px !important;
 }
 
-
 /* Media query for smaller screens */
 @media screen and (max-width: 767px) {
     .calculator {
-        width: 90%; /* Adjust the width for smaller screens */
+        width: 90%;
     }
 }
 
-
-
 /* Styling for the result pop-up */
 .result {
-    display: none; /* Initially hide the result pop-up */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -90,7 +142,7 @@ header {
     background-color: #0f1726;
     font-size: 18px;
     padding: 20px;
-    gap: 10px; /* Spacing between items */
+    gap: 10px;
     background-color: #1a5684;
 }
 
@@ -116,7 +168,6 @@ p {
     align-content: center;
 }
 
-
 /* Styles for the close button */
 .close-btn {
     position: absolute;
@@ -125,9 +176,8 @@ p {
     cursor: pointer;
     font-size: 20px;
     color: white;
-     /* Set a red border */
-    padding: 5px; /* Add some padding for better appearance */
-    border-radius: 30%; /* Make it a circle by adjusting border-radius */
+    padding: 5px;
+    border-radius: 30%;
     box-shadow: inset 0 50px 25px -25px #84b332;
     background-color: #668a28;
     display: flex;
@@ -136,68 +186,27 @@ p {
 }
 
 .close-btn:hover {
-    color: #ccc; /* Change color on hover */
-    border-color: #ccc; /* Change border color on hover */
+    color: #ccc;
+    border-color: #ccc;
 }
-
 
 /* Media query for mobile devices */
 @media screen and (max-width: 767px) {
     .result {
-        width: 90%; /* Adjust width for mobile */
-        display: block; /* Show the result section */
-        margin: auto; /* Center horizontally */
-        top: 20px; /* Remove top positioning */
-        left: unset; /* Remove left positioning */
-        transform: unset; /* Remove transform */
-    }
-}
-
-.green {
-    color: #83ff83;
-    font-weight: bold;
-    font-size: 22px; /* Set your custom size */
-}
-
-.red {
-    color: red;
-    font-weight: bold;
-    font-size: 22px; /* Set your custom size */
-}
-
-
-button {
-    display: block;
-    padding: 15px 40px; /* Adjusting padding to create a standard button size */
-    background-color: #6b9420;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    border-left: 1px solid #ccc;
-    vertical-align: bottom;
-    text-align: left;
-    font-size: 15px;
-    line-height: 11px;
-    color: #fff;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effects */
-.column:hover,
-/* Media query for mobile devices */
-@media screen and (max-width: 767px) {
-    .container {
-        flex-direction: column; /* Change to a column layout for mobile */
+        width: 90%;
+        display: block;
+        margin: auto;
+        top: 20px;
+        left: unset;
+        transform: unset;
     }
 
-    .column1,
-    .column2 {
-        width: 100%;
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .result {
-        display: block; /* Show the result section */
-        margin-top: -20px; /* Adjust margin for better spacing */
+    .header-buttons button {
+        margin-bottom: 10px;
     }
-    
 }
